@@ -1,11 +1,18 @@
 import styles from './GameOption.module.css'
+import Icon from '../icon/Icon'
 
-function Gameoption () {
-    return (
-      <div className={styles.gameOption}>
-        
-      </div>  
-    )
+const GameIcon = ({ iconName }) => <Icon iconName={iconName} size="25px" />
+function Gameoption ({ status }) {
+  return (
+    <div className={styles.gameOption}>
+      {
+        status === 1 && <GameIcon iconName="circle" />
+      }
+      {
+        status === -1 && <GameIcon iconName="x" />
+      }  
+    </div>  
+  )
 }
 
 export default Gameoption
